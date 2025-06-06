@@ -15,7 +15,10 @@ return {
       transparent = false,
       dimInactive = true,
       terminalColors = true,
-      theme = "wave", -- options: wave, dragon, lotus
+      colors = {
+        palette = {},
+        theme = { wave = {}, lotus = {}, dragon = {}, all = {} },
+      },
       overrides = function(colors)
         return {
           NormalFloat = { bg = colors.theme.ui.bg_p1 },
@@ -30,6 +33,11 @@ return {
           TelescopeResultsBorder = { fg = colors.theme.ui.bg_m1, bg = colors.theme.ui.bg_m1 },
         }
       end,
+      theme = "dragon", -- options: wave, dragon, lotus
+      background = {
+        dark = "wave",
+        light = "lotus",
+      },
     },
     config = function(_, opts)
       require("kanagawa").setup(opts)
